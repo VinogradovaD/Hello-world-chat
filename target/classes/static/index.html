@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/mini-logo.png">
+    <title>Hello world</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="wrapper nav-wrapper">
+                <img src="img/logo.png" alt="logo" class="logo">
+                <div id="menu" class="nav">
+                    <a href="#about">О нас</a>
+                    <a href="#rooms">Комнаты</a>
+                    <a href="#footer">Контакты</a>
+                </div>
+                <a class="hidden nav text-back">На главную</a>
+            </div>
+            <div class="line"></div>
+
+            <div id="about" class="wrapper about-wrapper about">
+                <div id="offer" class="offer">
+                    <h1>
+                        Привет ! 👋🏻
+                    </h1>
+                    <p class="intro">
+                        Ты попал в наш чат для любителей кодить. Здесь ты сможешь приятно провести время, поговорить с
+                        интересеными людьми или попросить помощь.
+                    </p>
+                </div>
+                <img src="img/coding.jpg" alt="coding" class="coding">
+            </div>
+
+            <div class="sign-in hidden">
+                <form  class="form-for-name center">
+                    <p class="form-text">Введите имя для входа</p>
+                    <input type="text" class="name center">
+                    <button id="btn-sign-in" class="btn btn-sign-in center">Войти</button>
+                </form>
+                <div class="error"></div>
+            </div>
+
+            <div class="chat hidden">
+                <h2 class="chat-title"></h2>
+                <div class="line"></div>
+                <div class="connecting">
+                    Connecting...
+                </div>
+                <ul id="messageArea">
+
+                </ul>
+                <form class="form-for-message wrapper chat-wrapper">
+                    <input type="text" class="message center">
+                    <button type="submit" class="btn btn-send">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section class="rooms" id="rooms">
+        <div class="container">
+            <h2>Чаты</h2>
+            <div class="wrapper rooms-wrapper">
+                <form class="room" data-name="Общий">
+                    <img src="img/icon-man.png" alt="man" class="room-icon center">
+                    <h3 class="room-name center">Общий</h3>
+                    <button id="btn-enter-room" type="submit" class="btn">Войти</button>
+                </form>
+                <form class="room" data-name="Аналитика">
+                    <img src="img/icon-graph.png" alt="graph" class="room-icon center">
+                    <h3 class="room-name center">Аналитика</h3>
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+                <form class="room" data-name="Frontend">
+                    <img src="img/icon-front.png" alt="front" class="room-icon center">
+                    <h3 class="room-name center">Frontend</h3>
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+            </div>
+            <div class="wrapper rooms-wrapper">
+                <form class="room" data-name="WEB">
+                    <img src="img/icon-web.png" alt="web" class="room-icon center">
+                    <h3 class="room-name center">WEB</h3>
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+                <form class="room" data-name="IOS">
+                    <img src="img/icon-apple.png" alt="phone" class="room-icon center">
+                    <h3 class="room-name center">IOS</h3>
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+                <form class="room"data-name="Android">
+                    <img src="img/icon-android.jpg" alt="android" class="room-icon center android-img">
+                    <h3 class="room-name center">Android</h3>
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="contacts">
+                <p>by Darina V.</p>
+                <p>darina-vinogradova@inbox.ru</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#menu").on("click", "a", function (event) {
+                event.preventDefault();
+                var id = $(this).attr('href'),
+                    top = $(id).offset().top;
+                $('body,html').animate({ scrollTop: top }, 500);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
