@@ -1,6 +1,5 @@
 package com.example.chat.controller;
 
-
 import com.example.chat.model.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
