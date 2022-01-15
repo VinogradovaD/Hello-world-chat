@@ -28,9 +28,34 @@ const home = document.querySelector('.logo');
 
 const textBack = document.querySelector('.text-back');
 
+const intro = document.querySelector('.intro');
+
 let stompClient = null;
 
 let username = null;
+
+const text = 'Ты попал в наш чат для любителей кодить. Здесь ты сможешь приятно провести время, поговорить с интересеными людьми или попросить помощь.'
+
+let count = 0;
+
+let result = '';
+
+function typeLine() {
+    let interval = setTimeout(() => {
+        result += text[count];
+        intro.innerHTML = result;
+        count++;
+        if (count == text.length) {
+            clearTimeout(interval);
+            intro.innerHTML = result;
+            count = 0;
+            result = '';
+        }
+        typeLine();
+      }, 50);
+}
+
+typeLine();
 
 function enter(event) {
     aboutPage.classList.add('hidden');

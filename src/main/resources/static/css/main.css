@@ -13,6 +13,20 @@ h1, h2, h3 {
 
 h1 {
     font-size: 48px;
+    opacity:0;
+    transition: 1s;
+    animation: animation 2s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
+
+@keyframes animation{
+    0%{
+    opacity:0;
+    }
+    100% {
+    opacity:1;
+    }
 }
 
 h2 {
@@ -36,8 +50,8 @@ input {
 }
 
 header {
-    padding-top: 37px;
-    padding-bottom: 161px;
+    padding-top: 25px;
+    padding-bottom: 90px;
 }
 
 .wrapper {
@@ -61,6 +75,12 @@ header {
     padding-left: 44px;
 }
 
+.nav a:hover {
+    color: #8BD4E4;
+    font-size: 16px;
+}
+
+
 .line {
     width: 100%;
     border: 0.1px solid #E9E9E9;
@@ -68,19 +88,29 @@ header {
 }
 
 .offer {
-    margin-top: 154px;
+    margin-top: 140px;
 }
 
 .intro {
     margin-top: 25px;
-    width: 337px;
+    width: 410px;
     font-size: 18px;
 }
 
+.hand {
+    width: 60px;
+}
+
 .coding {
-    margin-top: 100px;
+    margin-top: 80px;
     width: 500px;
     border-radius: 10px;
+    opacity: 0;
+    transition: 1s;
+    animation: animation 2s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 .rooms {
@@ -95,7 +125,14 @@ header {
     background-color: white;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 5px 10px 2px rgba(116, 116, 116, 0.2);
+    position: relative;
+    transition: left .2s linear;
 }
+
+.room:hover {
+    bottom: 10px;
+  }
 
 .room-icon {
     width: 70px;
@@ -123,6 +160,7 @@ header {
 .btn:hover {
     background: #BEBEBE;
 }
+
 .center {
     display: block;
     margin-left: auto;
@@ -130,7 +168,7 @@ header {
 }
 
 .rooms-wrapper {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 footer {
@@ -153,7 +191,7 @@ footer {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding: 52px 0;
-
+    margin-bottom: 70px;
 }
 
 .form-text {
@@ -164,22 +202,14 @@ footer {
 .name {
     margin-top: 20px;
     width: 320px;
-    padding: 5px 0;
+    padding: 8px;
     border-radius: 5px;
     border: none;
-    padding: 8px 0;
 }
 
 .btn-sign-in {
     margin-top: 20px;
     background-color: #536788;
-}
-
-.error {
-    font-size: 13px;
-    color: red;
-    text-align: center;
-    padding-top: 10px;
 }
 
 .chat {
@@ -195,7 +225,7 @@ footer {
 
 .chat-title {
     color: #000;
-    font-size: 30px;
+    font-size: 27px;
 }
 
 .chat .line {
@@ -206,19 +236,16 @@ footer {
 }
 
 .message {
-    margin-left: 30px;
-    margin-right: 0;
-    width: 644px;
-    padding: 5px 0;
+    width: 83%;
     border-radius: 5px;
     border: none;
     padding: 8px 0;
 }
 
 .btn-send {
-    width: 130px;
+    width: 15%;
     margin-top: 0;
-    margin-right: 30px;
+    margin-right: 10px;
     background-color: #536788;
 }
 
@@ -288,8 +315,6 @@ footer {
     padding-top: 5px;
     text-align: center;
     color: white;
-    position: absolute;
-    width: 100%;
 }
 
 .text-back {
@@ -298,8 +323,6 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
-
-
 
 @media screen and (max-width: 1200px) {
     .container {
@@ -333,16 +356,6 @@ footer {
     .chat {
         width: 100%;
     }
-
-    .message {
-        margin-left: 15px;
-        width: 580px;
-    }
-
-    .btn-send {
-        margin-right: 15px;
-        width: 100px;
-    }
 }
 
  
@@ -374,14 +387,6 @@ footer {
 
     .chat-title {
         font-size: 25px;
-    }
-
-    .message {
-        width: 72%;
-    }
-
-    .btn-send {
-        width: 21%;
     }
 
     .sign-in {
@@ -428,7 +433,6 @@ footer {
 
     .message {
         margin-left: 7px;
-        
     }
 
     .chat-title {
